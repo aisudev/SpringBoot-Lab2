@@ -13,6 +13,8 @@ import se331.lab.rest.repository.OrganizationRepository;
 public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
     @Autowired
     EventRepository eventRepository;
+    @Autowired
+    OrganizationRepository orgRepository;
     @Override
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
         eventRepository.save(Event.builder()
@@ -55,5 +57,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .petAllowed(true)
                 .organizer("Chiang Mai Municipality")
                 .build());
+
+        orgRepository.save(Organization.builder().name("Tesla").address("Sanfracisco").build());
     }
 }
