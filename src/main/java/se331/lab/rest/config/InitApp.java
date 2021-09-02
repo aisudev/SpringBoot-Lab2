@@ -5,7 +5,9 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 import se331.lab.rest.entity.Event;
+import se331.lab.rest.entity.Organization;
 import se331.lab.rest.repository.EventRepository;
+import se331.lab.rest.repository.OrganizationRepository;
 
 @Component
 public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
@@ -53,6 +55,5 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .petAllowed(true)
                 .organizer("Chiang Mai Municipality")
                 .build());
-
     }
 }
